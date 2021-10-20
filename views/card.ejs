@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="stylesheet" href="/views/style.css">
+    <style>
+      body{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: rgb(191 188 228);
+    }
+    .container{
+    width: 400px;
+    height: 400px;
+    box-sizing: border-box;
+    border-radius: 30px;
+     margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 150px;
+    margin-bottom: 20px;
+    box-shadow: 5px 10px 10px #171e2c;
+    background-color: rgb(202, 231, 240);
+   }
+
+  
+   h3{
+       color:darkslategray;
+   }
+   h2{
+       color: firebrick;
+   }
+   h4{
+       color: #171e2c;
+   }
+   #error{
+       font-size: 30px;
+       color: red;
+   }
+   .social-footer{
+       margin: auto;
+       margin-bottom: 5px;
+       width: 100%;
+       height: 100px;
+       display: flex;
+       flex-direction: row;
+       justify-content: space-between;
+    }
+    .social-footer-icons{
+        width: 100%;
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .social-footer-icons #heart{
+        color: red;
+    }
+
+    .social-footer-icons ul{
+        float: right;
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+    }
+    .social-footer-icons ul li{
+        padding: 10px;
+        font-size: 30px;
+    }
+    .social-footer-icons h2{
+        width: 40%;
+    }
+
+    .social-footer-icons ul li i{
+        color: black;
+    }
+    .social-footer-icons ul li i:hover{
+        color: red;
+    }
+ 
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <% if(locals.error){%>
+        <h4 id="error"><%= locals.error%> </h4>
+        <%}
+        else{%>
+            <h2>Quotes of the day </h2>
+            <h3><%=txt%></h3>
+            <h4><%=author%></h4>
+            <%
+          }%>
+
+    </div>
+    <div class="social-footer">
+        <div class="social-footer-icons">
+            <h2>Made with <i id="heart" class="fas fa-heart"></i> by <span>SUMER</span></h2>
+          <ul>
+            <li><a href="https://www.facebook.com/joya.rani.33"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com/singhsumer123/"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://github.com/sumer82"><i class="fab fa-github"></i></a></li>
+          </ul>
+        </div>
+    </div>
+</body>
+</html>
